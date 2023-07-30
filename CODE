@@ -1,0 +1,123 @@
+#include <LiquidCrystal.h> 
+
+#define Trigger 3
+#define Echo 2
+
+const int RS=12, E=11, D4 = 8, D5=7, D6=6, D7 = 5;
+Liquid Crystal lcd(RS, E, D4, D5, D6, D7);
+long time=0;
+int distance-0:
+int Mode=0:
+int num=0;
+int num1=0;
+
+void setup()
+
+{
+
+lcd.begin(16,2);
+
+pinMode(Trigger, OUTPUT);
+pinMode(Echo,INPUT);
+pinMode(10,INPUT);
+
+lcd.print(" WELCOME TO");
+lcd.setCursor(0,1);
+lcd.print(" MINI PROJECT");
+delay(1000);
+lcd.clear();
+lcd.setCursor(0,0);
+lcd.print("DISTANCE MEASUREMENT USING ULTRA SONIC");
+delay(1000):
+while(num<20)
+{
+lcd.scrollDisplayLeft();
+delay(500);
+num++;
+}
+lcd.setCursor(0.0);
+lcd.print("SENSOR ");
+while(num1<12)
+{ 
+lcd.scrollDisplayLeft(); 
+delay(500);
+num++:
+} 
+delay(1000);
+led.clear():
+lcd.print(" MADE BY");
+lcd.setCursor(0,1);
+
+led.print("Praddhumn SINGH");
+delay(1000);
+led.clear();
+lcd.print(" Mohd Tabish");
+lcd.setCursor(0,1);
+lcd.print(" Husain");
+delay(1000);
+led.clear();
+lcd.print(" Shachi");
+lcd.setCursor(0,1);
+lcd.print(" Shrivastwa");
+delay(1000);
+lcd.clear();
+lcd.print(" Shashwat");
+lcd.setCursor(0,1);
+lcd.print(" Srivastava");
+delay(1000);
+lcd.clear();
+lcd.print("UnderSupervision"); 
+lcd.setCursor(0,1); 
+lcd.print("Mr.Brajesh Singh");
+delay(1000);
+} 
+
+void loop()
+{
+
+led.clear():
+digitalWrite(Trigger,LOW);
+delayMicroseconds(2);
+digitalWrite(Trigger,HIGH); 
+delayMicroseconds(10); 
+digitalWrite(Trigger,LOW);
+delayMicroseconds(2); 
+time-pulseIn(Echo,HIGH);
+distance=time*340/20000;
+if(digitalRead(10)==HIGH){
+Mode++;
+lcd.clear();
+lcd.print(" MODE CHANGE");
+delay(1000);
+}
+
+if(Mode==1){
+lcd.clear();
+lcd.print("Distance:");
+lcd.print(distance/30.48):
+lcd.print("Ft");
+lcd.setCursor(0,1);
+lcd.print("Distance:");
+lcd.print(distance/100.);
+lcd.print("M");
+
+}
+else{
+lcd.clear();
+lcd.print("Distance:");
+lcd.print(distance);
+lcd.print("Cm");
+lcd.setCursor(0,1); 
+lcd.print("Distance:"); 
+lcd.print(distance/2.54); 
+lcd.print("In");
+
+}
+
+if(Mode==2)
+{ 
+lcd.clear();
+Mode=0;
+lcd.print(" MODE CHANGE"); 
+delay(500);
+}
